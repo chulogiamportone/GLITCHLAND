@@ -1,16 +1,17 @@
-[gd_scene load_steps=27 format=4 uid="uid://legtahpkt2gw"]
+[gd_scene load_steps=28 format=4 uid="uid://legtahpkt2gw"]
 
-[ext_resource type="Texture2D" path="res://pixil-frame-0 (3).png" id="1_d3si5"]
-[ext_resource type="Texture2D" path="res://pixil-frame-0 (9).png" id="2_ygq5x"]
-[ext_resource type="Texture2D" path="res://ChatGPT Image 17 abr 2025, 17_20_37.png" id="3_4d7sh"]
-[ext_resource type="Texture2D" path="res://cuerpo azul.png" id="3_ov38v"]
-[ext_resource type="Texture2D" path="res://manos azul.png" id="4_3k4cq"]
-[ext_resource type="Script" path="res://character_body_2d.gd" id="4_rj586"]
-[ext_resource type="Texture2D" path="res://pie derecho.png" id="5_1ilvb"]
-[ext_resource type="Texture2D" path="res://pie izq azul.png" id="6_xm0ed"]
-[ext_resource type="Script" path="res://camera_2d.gd" id="8_rj586"]
+[ext_resource type="Texture2D" uid="uid://bceh0amsihpee" path="res://ART/pixil-frame-0 (3).png" id="1_d3si5"]
+[ext_resource type="Texture2D" uid="uid://cd3p62yo3ggga" path="res://ART/pixil-frame-0 (9).png" id="2_ygq5x"]
+[ext_resource type="Texture2D" uid="uid://rje1cu2x3on3" path="res://ART/ChatGPT Image 17 abr 2025, 17_20_37.png" id="3_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://c5mno4w5e86r8" path="res://ART/cuerpo azul.png" id="3_ov38v"]
+[ext_resource type="Texture2D" uid="uid://cfpo0eqqwk38x" path="res://ART/manos azul.png" id="4_3k4cq"]
+[ext_resource type="Script" uid="uid://bijwjce5jtucs" path="res://Scenes/character_body_2d.gd" id="4_rj586"]
+[ext_resource type="Texture2D" uid="uid://5pssjjn75hq5" path="res://ART/pie derecho.png" id="5_1ilvb"]
+[ext_resource type="Texture2D" uid="uid://bt8wrj2208pf4" path="res://ART/pie izq azul.png" id="6_xm0ed"]
+[ext_resource type="Script" uid="uid://dmcmrcwxnxf4y" path="res://Scenes/camera_2d.gd" id="8_rj586"]
 [ext_resource type="SpriteFrames" uid="uid://t1ds30rd0vru" path="res://ART/SpriteFrames/Rosa.tres" id="9_hqns4"]
 [ext_resource type="SpriteFrames" uid="uid://cbsacpiujidy6" path="res://ART/SpriteFrames/Blanco.tres" id="10_x0ka3"]
+[ext_resource type="SpriteFrames" uid="uid://13d8feldxhgu" path="res://ART/SpriteFrames/Azul.tres" id="11_x0ka3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57ypx"]
 texture = ExtResource("1_d3si5")
@@ -931,8 +932,8 @@ shape = SubResource("RectangleShape2D_hqns4")
 position = Vector2(8, -1.99999)
 scale = Vector2(3.9375, 3.9375)
 sprite_frames = ExtResource("9_hqns4")
-animation = &"Attack"
-frame_progress = 0.421657
+animation = &"Jump2"
+frame_progress = 0.774858
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 position = Vector2(325, 466)
@@ -980,11 +981,10 @@ shape = SubResource("RectangleShape2D_hqns4")
 position = Vector2(12, 0.999972)
 scale = Vector2(3.9375, 3.9375)
 sprite_frames = ExtResource("10_x0ka3")
-animation = &"Attack"
-frame_progress = 0.0716568
+animation = &"Walk"
+frame_progress = 0.489575
 
 [node name="CharacterBody2D3" type="CharacterBody2D" parent="."]
-visible = false
 position = Vector2(514, 259)
 script = ExtResource("4_rj586")
 player = 3
@@ -1025,6 +1025,13 @@ shape = SubResource("RectangleShape2D_ir8iy")
 [node name="pies" type="CollisionShape2D" parent="CharacterBody2D3"]
 position = Vector2(2.5, 51.5)
 shape = SubResource("RectangleShape2D_hqns4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D3"]
+position = Vector2(1, -3)
+scale = Vector2(4.03125, 4.03125)
+sprite_frames = ExtResource("11_x0ka3")
+animation = &"Walk"
+frame_progress = 0.576467
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(596, 150)
