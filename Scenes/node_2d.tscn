@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://d0g5kh7qubme7"]
+[gd_scene load_steps=27 format=4 uid="uid://d0g5kh7qubme7"]
 
 [ext_resource type="Texture2D" uid="uid://bceh0amsihpee" path="res://ART/pixil-frame-0 (3).png" id="1_d3si5"]
 [ext_resource type="Texture2D" uid="uid://cd3p62yo3ggga" path="res://ART/pixil-frame-0 (9).png" id="2_ygq5x"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://5pssjjn75hq5" path="res://ART/pie derecho.png" id="5_1ilvb"]
 [ext_resource type="Texture2D" uid="uid://bt8wrj2208pf4" path="res://ART/pie izq azul.png" id="6_xm0ed"]
 [ext_resource type="Script" uid="uid://dmcmrcwxnxf4y" path="res://Scenes/camera_2d.gd" id="8_rj586"]
+[ext_resource type="SpriteFrames" uid="uid://t1ds30rd0vru" path="res://ART/SpriteFrames/Rosa.tres" id="9_p20hg"]
+[ext_resource type="SpriteFrames" uid="uid://cbsacpiujidy6" path="res://ART/SpriteFrames/Blanco.tres" id="10_he4j0"]
 [ext_resource type="PackedScene" uid="uid://d4beqstaw2ln6" path="res://Scenes/re_spawn.tscn" id="10_ir8iy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57ypx"]
@@ -923,6 +925,13 @@ shape = SubResource("RectangleShape2D_ir8iy")
 position = Vector2(2.5, 51.5)
 shape = SubResource("RectangleShape2D_hqns4")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(6, -4)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("9_p20hg")
+animation = &"Jump2"
+frame_progress = 0.201219
+
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 position = Vector2(325, 466)
 script = ExtResource("4_rj586")
@@ -964,6 +973,12 @@ shape = SubResource("RectangleShape2D_ir8iy")
 [node name="pies" type="CollisionShape2D" parent="CharacterBody2D2"]
 position = Vector2(2.5, 51.5)
 shape = SubResource("RectangleShape2D_hqns4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+position = Vector2(5, -4)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("10_he4j0")
+animation = &"Attack"
 
 [node name="CharacterBody2D3" type="CharacterBody2D" parent="."]
 visible = false
