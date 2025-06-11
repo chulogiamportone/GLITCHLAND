@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfpo0eqqwk38x"
-path="res://.godot/imported/manos azul.png-dd17ce7d24107a435b86b521707cfdb3.ctex"
+uid="uid://bd0ei6ru3b406"
+path="res://.godot/imported/rojito.png-c429ef17d7abf57e1c5dec6884e6f376.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://manos azul.png"
-dest_files=["res://.godot/imported/manos azul.png-dd17ce7d24107a435b86b521707cfdb3.ctex"]
+source_file="res://ART/rojito.png"
+dest_files=["res://.godot/imported/rojito.png-c429ef17d7abf57e1c5dec6884e6f376.ctex"]
 
 [params]
 

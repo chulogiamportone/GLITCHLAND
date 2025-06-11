@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bobdspobvjlc"
-path="res://.godot/imported/pixil-frame-0 (7).png-dccde4ae611529bdc76732aea4e89eaa.ctex"
+uid="uid://bq0if4xakssan"
+path="res://.godot/imported/grisin.png-f067c88df56d06930ff7b03622ef0d45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixil-frame-0 (7).png"
-dest_files=["res://.godot/imported/pixil-frame-0 (7).png-dccde4ae611529bdc76732aea4e89eaa.ctex"]
+source_file="res://ART/grisin.png"
+dest_files=["res://.godot/imported/grisin.png-f067c88df56d06930ff7b03622ef0d45.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=128
 detect_3d/compress_to=1

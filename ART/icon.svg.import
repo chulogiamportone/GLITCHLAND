@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5pssjjn75hq5"
-path="res://.godot/imported/pie derecho.png-e1e7ba04b2428384621bef0dcf6b7216.ctex"
+uid="uid://cu4aqe67q1ljy"
+path="res://.godot/imported/icon.svg-70db6c18cf27075cac712663a9620bdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pie derecho.png"
-dest_files=["res://.godot/imported/pie derecho.png-e1e7ba04b2428384621bef0dcf6b7216.ctex"]
+source_file="res://ART/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-70db6c18cf27075cac712663a9620bdd.ctex"]
 
 [params]
 
@@ -30,5 +30,8 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=128
+process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
