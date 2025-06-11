@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7lstmiqv1l78"
-path="res://.godot/imported/azulito.png-3041240af8200cdc461669f54f7bfe29.ctex"
+uid="uid://cd3p62yo3ggga"
+path="res://.godot/imported/pixil-frame-0 (9).png-fa5a6dd8c0fe12967ab9fff7573a3c17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://azulito.png"
-dest_files=["res://.godot/imported/azulito.png-3041240af8200cdc461669f54f7bfe29.ctex"]
+source_file="res://ART/pixil-frame-0 (9).png"
+dest_files=["res://.godot/imported/pixil-frame-0 (9).png-fa5a6dd8c0fe12967ab9fff7573a3c17.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=128
+process/size_limit=0
 detect_3d/compress_to=1

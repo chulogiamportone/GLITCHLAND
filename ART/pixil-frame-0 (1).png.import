@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo1rl875o6hx"
-path="res://.godot/imported/verdini.png-5574659fdeb060fde7cb0fd956815764.ctex"
+uid="uid://dh6t1g8dcrhh1"
+path="res://.godot/imported/pixil-frame-0 (1).png-a5d006cdebe196d3bfc583cb8d394434.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://verdini.png"
-dest_files=["res://.godot/imported/verdini.png-5574659fdeb060fde7cb0fd956815764.ctex"]
+source_file="res://ART/pixil-frame-0 (1).png"
+dest_files=["res://.godot/imported/pixil-frame-0 (1).png-a5d006cdebe196d3bfc583cb8d394434.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=128
+process/size_limit=0
 detect_3d/compress_to=1

@@ -1,14 +1,15 @@
 [gd_scene load_steps=25 format=4 uid="uid://d0g5kh7qubme7"]
 
-[ext_resource type="Texture2D" uid="uid://bceh0amsihpee" path="res://pixil-frame-0 (3).png" id="1_d3si5"]
-[ext_resource type="Texture2D" uid="uid://cd3p62yo3ggga" path="res://pixil-frame-0 (9).png" id="2_ygq5x"]
-[ext_resource type="Texture2D" uid="uid://rje1cu2x3on3" path="res://ChatGPT Image 17 abr 2025, 17_20_37.png" id="3_4d7sh"]
-[ext_resource type="Texture2D" uid="uid://c5mno4w5e86r8" path="res://cuerpo azul.png" id="3_ov38v"]
-[ext_resource type="Texture2D" uid="uid://cfpo0eqqwk38x" path="res://manos azul.png" id="4_3k4cq"]
-[ext_resource type="Script" uid="uid://bijwjce5jtucs" path="res://character_body_2d.gd" id="4_rj586"]
-[ext_resource type="Texture2D" uid="uid://5pssjjn75hq5" path="res://pie derecho.png" id="5_1ilvb"]
-[ext_resource type="Texture2D" uid="uid://bt8wrj2208pf4" path="res://pie izq azul.png" id="6_xm0ed"]
-[ext_resource type="Script" uid="uid://dmcmrcwxnxf4y" path="res://camera_2d.gd" id="8_rj586"]
+[ext_resource type="Texture2D" uid="uid://bceh0amsihpee" path="res://ART/pixil-frame-0 (3).png" id="1_d3si5"]
+[ext_resource type="Texture2D" uid="uid://cd3p62yo3ggga" path="res://ART/pixil-frame-0 (9).png" id="2_ygq5x"]
+[ext_resource type="Texture2D" uid="uid://rje1cu2x3on3" path="res://ART/ChatGPT Image 17 abr 2025, 17_20_37.png" id="3_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://c5mno4w5e86r8" path="res://ART/cuerpo azul.png" id="3_ov38v"]
+[ext_resource type="Texture2D" uid="uid://cfpo0eqqwk38x" path="res://ART/manos azul.png" id="4_3k4cq"]
+[ext_resource type="Script" uid="uid://bijwjce5jtucs" path="res://Scenes/character_body_2d.gd" id="4_rj586"]
+[ext_resource type="Texture2D" uid="uid://5pssjjn75hq5" path="res://ART/pie derecho.png" id="5_1ilvb"]
+[ext_resource type="Texture2D" uid="uid://bt8wrj2208pf4" path="res://ART/pie izq azul.png" id="6_xm0ed"]
+[ext_resource type="Script" uid="uid://dmcmrcwxnxf4y" path="res://Scenes/camera_2d.gd" id="8_rj586"]
+[ext_resource type="PackedScene" uid="uid://d4beqstaw2ln6" path="res://Scenes/re_spawn.tscn" id="10_ir8iy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57ypx"]
 texture = ExtResource("1_d3si5")
@@ -852,9 +853,6 @@ size = Vector2(26, 85)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
 size = Vector2(79, 17)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
-size = Vector2(11301.5, 978)
-
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMapLayer" parent="."]
@@ -1017,10 +1015,4 @@ zoom = Vector2(0.7, 0.7)
 limit_left = -100
 script = ExtResource("8_rj586")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(4659.25, 1225)
-shape = SubResource("RectangleShape2D_rj586")
-
-[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[node name="ReSpawn" parent="." instance=ExtResource("10_ir8iy")]

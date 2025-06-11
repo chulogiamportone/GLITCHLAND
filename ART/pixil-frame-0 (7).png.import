@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd0ei6ru3b406"
-path="res://.godot/imported/rojito.png-a39266f0d41432dbdd5c5fa059b29c01.ctex"
+uid="uid://bobdspobvjlc"
+path="res://.godot/imported/pixil-frame-0 (7).png-788ccf0e5d8d7b47078c421c7dea41b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rojito.png"
-dest_files=["res://.godot/imported/rojito.png-a39266f0d41432dbdd5c5fa059b29c01.ctex"]
+source_file="res://ART/pixil-frame-0 (7).png"
+dest_files=["res://.godot/imported/pixil-frame-0 (7).png-788ccf0e5d8d7b47078c421c7dea41b4.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=128
+process/size_limit=0
 detect_3d/compress_to=1

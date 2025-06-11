@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hoyxjo3j1rft"
-path="res://.godot/imported/pixil-frame-0 (6).png-deb9d054cecd76db0bbea3b9e0c6eb7f.ctex"
+uid="uid://c5mno4w5e86r8"
+path="res://.godot/imported/cuerpo azul.png-faca9352836b3c84ab7456226762f86d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixil-frame-0 (6).png"
-dest_files=["res://.godot/imported/pixil-frame-0 (6).png-deb9d054cecd76db0bbea3b9e0c6eb7f.ctex"]
+source_file="res://ART/cuerpo azul.png"
+dest_files=["res://.godot/imported/cuerpo azul.png-faca9352836b3c84ab7456226762f86d.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=128
 detect_3d/compress_to=1

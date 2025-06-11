@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5mno4w5e86r8"
-path="res://.godot/imported/cuerpo azul.png-0643f1d804dbbc51222d799d695a6544.ctex"
+uid="uid://b310nd6y0phy1"
+path="res://.godot/imported/pixil-frame-0.png-034c12fa76ba6d0edcc3ba312a852f08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cuerpo azul.png"
-dest_files=["res://.godot/imported/cuerpo azul.png-0643f1d804dbbc51222d799d695a6544.ctex"]
+source_file="res://ART/pixil-frame-0.png"
+dest_files=["res://.godot/imported/pixil-frame-0.png-034c12fa76ba6d0edcc3ba312a852f08.ctex"]
 
 [params]
 
