@@ -15,6 +15,14 @@ run/main_scene="uid://d0g5kh7qubme7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://ART/icon.svg"
 
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
 [input]
 
 ui_left={
@@ -48,5 +56,6 @@ j_jump={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
