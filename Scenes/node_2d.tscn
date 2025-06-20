@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bceh0amsihpee" path="res://ART/pixil-frame-0 (3).png" id="1_d3si5"]
 [ext_resource type="Texture2D" uid="uid://cd3p62yo3ggga" path="res://ART/pixil-frame-0 (9).png" id="2_ygq5x"]
 [ext_resource type="Texture2D" uid="uid://rje1cu2x3on3" path="res://ART/ChatGPT Image 17 abr 2025, 17_20_37.png" id="3_4d7sh"]
-[ext_resource type="Script" uid="uid://bijwjce5jtucs" path="res://Scenes/character_body_2d.gd" id="4_rj586"]
+[ext_resource type="PackedScene" uid="uid://buh1y1l1ivl0f" path="res://Scenes/character_body_2d.tscn" id="4_v7gqg"]
+[ext_resource type="PackedScene" uid="uid://dw708xita6yo1" path="res://Scenes/character_body_2d_2.tscn" id="5_wjtap"]
 [ext_resource type="Script" uid="uid://dmcmrcwxnxf4y" path="res://Scenes/camera_2d.gd" id="8_rj586"]
 [ext_resource type="SpriteFrames" uid="uid://t1ds30rd0vru" path="res://ART/SpriteFrames/Rosa.tres" id="9_p20hg"]
-[ext_resource type="SpriteFrames" uid="uid://cbsacpiujidy6" path="res://ART/SpriteFrames/Blanco.tres" id="10_he4j0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57ypx"]
 texture = ExtResource("1_d3si5")
@@ -620,75 +620,11 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAGAAUACwAAAAoAAAAGAAYACwAAAAsAAAAGAAcACwAAAAwAAAAGAAgACwAAAA0AAAAHAAUACwABAAoAAAAHAAYACwABAAsAAAAHAAcACwABAAwAAAAHAAgACwABAA0AAAAIAAUACwACAAoAAAAIAAYACwACAAsAAAAIAAcACwACAAwAAAAIAAgACwACAA0AAAAJAAUACwADAAoAAAAJAAYACwADAAsAAAAJAAcACwADAAwAAAAJAAgACwADAA0AAAAKAAUADAAEAAoAAAAKAAYADAAEAAsAAAAKAAcADAAEAAwAAAAKAAgADAAEAA0AAAALAAUADAAFAAoAAAALAAYADAAFAAsAAAALAAcADAAFAAwAAAALAAgADAAFAA0AAAAMAAUADAAGAAoAAAAMAAYADAAGAAsAAAAMAAcADAAGAAwAAAAMAAgADAAGAA0AAAANAAUADAAHAAoAAAANAAYADAAHAAsAAAANAAcADAAHAAwAAAANAAgADAAHAA0AAAAKAAEADAAEAAoAAAAKAAIADAAEAAsAAAAKAAMADAAEAAwAAAAKAAQADAAEAA0AAAALAAEADAAFAAoAAAALAAIADAAFAAsAAAALAAMADAAFAAwAAAALAAQADAAFAA0AAAAMAAEADAAGAAoAAAAMAAIADAAGAAsAAAAMAAMADAAGAAwAAAAMAAQADAAGAA0AAAANAAEADAAHAAoAAAANAAIADAAHAAsAAAANAAMADAAHAAwAAAANAAQADAAHAA0AAAA=")
 tile_set = SubResource("TileSet_a3eoa")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_v7gqg")]
 position = Vector2(204, 468)
-safe_margin = 0.001
-script = ExtResource("4_rj586")
-player = 1
 
-[node name="Cuerpo" type="Area2D" parent="CharacterBody2D"]
-
-[node name="Cuerpo2" type="CollisionShape2D" parent="CharacterBody2D/Cuerpo"]
-position = Vector2(2, -2)
-shape = SubResource("CapsuleShape2D_4d7sh")
-debug_color = Color(0.999375, 0.0212787, 1.15514e-06, 0.42)
-
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
-
-[node name="Empuje" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(57, 17)
-shape = SubResource("RectangleShape2D_ir8iy")
-disabled = true
-
-[node name="pies" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.5, 38.5)
-shape = SubResource("RectangleShape2D_hqns4")
-
-[node name="head" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.5, -19)
-shape = SubResource("RectangleShape2D_hqns4")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(6, -4)
-scale = Vector2(4, 4)
-sprite_frames = ExtResource("9_p20hg")
-animation = &"Idle"
-autoplay = "Idle"
-
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D2" parent="." instance=ExtResource("5_wjtap")]
 position = Vector2(325, 466)
-script = ExtResource("4_rj586")
-player = 2
-
-[node name="Cuerpo" type="Area2D" parent="CharacterBody2D2"]
-scale = Vector2(1.11004, 1.32506)
-
-[node name="Cuerpo2" type="CollisionShape2D" parent="CharacterBody2D2/Cuerpo"]
-position = Vector2(0, 3)
-shape = SubResource("CapsuleShape2D_4d7sh")
-debug_color = Color(0.999375, 0.0212787, 1.15514e-06, 0.42)
-
-[node name="Area2D" type="Area2D" parent="CharacterBody2D2"]
-
-[node name="Empuje" type="CollisionShape2D" parent="CharacterBody2D2/Area2D"]
-position = Vector2(60.5, 18)
-shape = SubResource("RectangleShape2D_ir8iy")
-disabled = true
-
-[node name="pies" type="CollisionShape2D" parent="CharacterBody2D2"]
-position = Vector2(2.5, 39.5)
-shape = SubResource("RectangleShape2D_hqns4")
-
-[node name="head" type="CollisionShape2D" parent="CharacterBody2D2"]
-position = Vector2(2.5, -28.5)
-shape = SubResource("RectangleShape2D_hqns4")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
-position = Vector2(5, -4)
-scale = Vector2(4, 4)
-sprite_frames = ExtResource("10_he4j0")
-animation = &"Attack"
-autoplay = "Idle"
 
 [node name="CharacterBody2D3" type="CharacterBody2D" parent="."]
 position = Vector2(-46, -166)
@@ -722,11 +658,3 @@ script = ExtResource("8_rj586")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReSpawn"]
 position = Vector2(4935.5, 1225)
 shape = SubResource("RectangleShape2D_rj586")
-
-[connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
-[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="CharacterBody2D2/Area2D" to="CharacterBody2D2" method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="CharacterBody2D2/Area2D" to="CharacterBody2D2" method="_on_area_2d_body_entered"]
-[connection signal="animation_finished" from="CharacterBody2D2/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished_2"]
-[connection signal="body_entered" from="ReSpawn" to="CharacterBody2D" method="_on_re_spawn_body_entered"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://buh1y1l1ivl0f"]
+
+[ext_resource type="Script" uid="uid://bijwjce5jtucs" path="res://Scenes/character_body_2d.gd" id="1_88kja"]
+[ext_resource type="SpriteFrames" uid="uid://t1ds30rd0vru" path="res://ART/SpriteFrames/Rosa.tres" id="2_it8n0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4d7sh"]
+radius = 31.5304
+height = 90.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir8iy"]
+size = Vector2(31, 22.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
+size = Vector2(43, 42)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+safe_margin = 0.001
+script = ExtResource("1_88kja")
+player = 1
+
+[node name="Cuerpo" type="Area2D" parent="."]
+
+[node name="Cuerpo2" type="CollisionShape2D" parent="Cuerpo"]
+position = Vector2(2, -2)
+shape = SubResource("CapsuleShape2D_4d7sh")
+debug_color = Color(0.999375, 0.0212787, 1.15514e-06, 0.42)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Empuje" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(57, 17)
+shape = SubResource("RectangleShape2D_ir8iy")
+disabled = true
+
+[node name="pies" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 38.5)
+shape = SubResource("RectangleShape2D_hqns4")
+
+[node name="head" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -19)
+shape = SubResource("RectangleShape2D_hqns4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -4)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("2_it8n0")
+animation = &"Idle"
+autoplay = "Idle"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
