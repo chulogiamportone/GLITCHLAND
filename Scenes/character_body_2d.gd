@@ -3,7 +3,7 @@ class_name Player
 
 var motion := Vector2.ZERO
 var gravity := 15
-var jump_strength := -500
+var jump_strength := -400
 var is_attacking := false
 
 @export var player := 0
@@ -109,18 +109,15 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func _on_animated_sprite_2d_animation_finished_2() -> void:
-	
 	if animated_sprite.animation == "Attack":
 		is_attacking = false
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name=="CharacterBody2D" or body.name=="CharacterBody2D2":
-
 		if body.player==1:
 			body.position.x= $"../CharacterBody2D2".position.x-50
-			body.position.y= 100
+			body.position.y= $"../CharacterBody2D2".position.y-20
 		else:
 			body.position.x= $"../CharacterBody2D".position.x-50
-			body.position.y= 100
-
+			body.position.y= $"../CharacterBody2D2".position.y-20

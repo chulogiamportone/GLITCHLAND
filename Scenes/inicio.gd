@@ -2,6 +2,7 @@ extends Control
 @onready var v_box_container: VBoxContainer = $VBoxContainer
 @onready var v_box_container_2: VBoxContainer = $VBoxContainer2
 
+var scene_tree := Engine.get_main_loop() as SceneTree
 
 func _on_button_pressed() -> void:
 	v_box_container.visible=false
@@ -9,4 +10,4 @@ func _on_button_pressed() -> void:
 	
 
 func _on_button_pressed2() -> void:
-	pass # Replace with function body.
+	scene_tree.change_scene_to_file("res://node_2d.tscn")

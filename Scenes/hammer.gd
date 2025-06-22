@@ -15,10 +15,10 @@ func _physics_process(delta: float) -> void:
 			body_inside.animated_sprite.play("Hurt")
 			if body_inside.player==1:
 				body_inside.position.x= $"../../CharacterBody2D2".position.x-20
-				body_inside.position.y= 50
+				body_inside.position.y= $"../../CharacterBody2D2".position.y-20
 			else:
 				body_inside.position.x= $"../../CharacterBody2D".position.x-20
-				body_inside.position.y= 50
+				body_inside.position.y= $"../../CharacterBody2D".position.y-20
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body.name=="CharacterBody2D" or body.name=="CharacterBody2D2":

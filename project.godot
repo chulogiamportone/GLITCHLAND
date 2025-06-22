@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="plataformero"
-run/main_scene="uid://d0g5kh7qubme7"
+run/main_scene="uid://c81n2mdaslu07"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://ART/icon.svg"
 

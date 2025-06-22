@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bepx60d5nilfe"]
+[gd_scene load_steps=13 format=3 uid="uid://ps7ywfk1l27j"]
 
 [ext_resource type="Texture2D" uid="uid://bun3j4tlujhmv" path="res://Assets/IndustrialWorld/4 Animated objects/Hammer.png" id="1_010gp"]
 [ext_resource type="Script" uid="uid://bbrn4o41yx547" path="res://Scenes/hammer.gd" id="2_l8gpf"]
@@ -74,6 +74,7 @@ size = Vector2(39.9376, 31.3272)
 scale = Vector2(1.02148, 1.02148)
 sprite_frames = SubResource("SpriteFrames_2u7jv")
 animation = &"Hammer"
+autoplay = "Hammer"
 script = ExtResource("2_l8gpf")
 
 [node name="Area2D2" type="Area2D" parent="."]
