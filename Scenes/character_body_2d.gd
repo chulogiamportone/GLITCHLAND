@@ -3,7 +3,7 @@ class_name Player
 
 var motion := Vector2.ZERO
 var gravity := 10
-var jump_strength := -1300
+var jump_strength := -400
 var is_attacking := false
 
 @export var player := 0
@@ -38,7 +38,7 @@ func _physics_process(delta):
 	
 	# Movimiento derecha
 	if Input.is_action_pressed(input_right):
-		motion.x = 500
+		motion.x = 50
 		animated_sprite.flip_h = false
 		empuje.disabled = true
 		empuje.position.x = abs(empuje.position.x)
@@ -47,7 +47,7 @@ func _physics_process(delta):
 
 	# Movimiento izquierda
 	elif Input.is_action_pressed(input_left):
-		motion.x = -500
+		motion.x = -50
 		animated_sprite.flip_h = true
 		empuje.disabled = true
 		empuje.position.x = -abs(empuje.position.x)
@@ -90,13 +90,6 @@ func _play_animation(name: String):
 		animated_sprite.play(name)
 
 
-func _on_re_spawn_body_entered(body: Node2D) -> void:
-	if body.player==1:
-		body.position.x= $"../CharacterBody2D2".position.x-50
-		body.position.y= 100
-	else:
-		body.position.x= $"../CharacterBody2D".position.x-50
-		body.position.y= 100
 
 
 
@@ -117,3 +110,12 @@ func _on_animated_sprite_2d_animation_finished_2() -> void:
 	if animated_sprite.animation == "Attack":
 		print("caca")
 		is_attacking = false
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.player==1:
+		body.position.x= $"../CharacterBody2D2".position.x-50
+		body.position.y= 100
+	else:
+		body.position.x= $"../CharacterBody2D".position.x-50
+		body.position.y= 100
