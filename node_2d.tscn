@@ -1,4 +1,8 @@
+
+[gd_scene load_steps=36 format=4 uid="uid://legtahpkt2gw"]
+
 [gd_scene load_steps=47 format=4 uid="uid://1cfh2dm2jbv4"]
+
 
 [ext_resource type="Texture2D" uid="uid://bceh0amsihpee" path="res://ART/pixil-frame-0 (3).png" id="1_d3si5"]
 [ext_resource type="Texture2D" uid="uid://cd3p62yo3ggga" path="res://ART/pixil-frame-0 (9).png" id="2_ygq5x"]
@@ -14,12 +18,19 @@
 [ext_resource type="Texture2D" uid="uid://6h5pa8hcg0by" path="res://Assets/IndustrialWorld/tileset.png" id="11_gt76g"]
 [ext_resource type="SpriteFrames" uid="uid://13d8feldxhgu" path="res://ART/SpriteFrames/Azul.tres" id="11_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://cxurhywa13ub1" path="res://Assets/IndustrialWorld/3 Objects/Box1.png" id="12_1fr6y"]
+
+[ext_resource type="PackedScene" uid="uid://buh1y1l1ivl0f" path="res://Scenes/character_body_2d.tscn" id="12_fs4d3"]
+[ext_resource type="PackedScene" uid="uid://dw708xita6yo1" path="res://Scenes/character_body_2d_2.tscn" id="13_7vxoj"]
+[ext_resource type="PackedScene" uid="uid://bepx60d5nilfe" path="res://Scenes/hammer.tscn" id="16_fs4d3"]
+[ext_resource type="Script" uid="uid://xym4q8rx2vuv" path="res://Scenes/hammer0.gd" id="17_7vxoj"]
+
 [ext_resource type="PackedScene" uid="uid://y6p22ms0mtp8" path="res://Scenes/character_body_2d.tscn" id="12_fs4d3"]
 [ext_resource type="PackedScene" path="res://Scenes/character_body_2d_2.tscn" id="13_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://brcjfq34g3i0t" path="res://Assets/IndustrialWorld/plataforma.png" id="14_7vxoj"]
 [ext_resource type="Script" uid="uid://do74i07d3ef42" path="res://Scenes/plataforma_mov.gd" id="14_ei405"]
 [ext_resource type="Texture2D" uid="uid://bun3j4tlujhmv" path="res://Assets/IndustrialWorld/4 Animated objects/Hammer.png" id="16_k73cj"]
 [ext_resource type="PackedScene" uid="uid://durrpbru4ktgb" path="res://Scenes/plataforma.tscn" id="21_7vxoj"]
+
 [ext_resource type="Texture2D" uid="uid://b5wb482hfepyq" path="res://Assets/IndustrialWorld/1 Tiles/IndustrialTile_36.png" id="22_bjha6"]
 [ext_resource type="Texture2D" uid="uid://c6aim7yob0ckx" path="res://Assets/IndustrialWorld/3 Objects/Barrel2.png" id="23_gt76g"]
 [ext_resource type="Texture2D" uid="uid://bvp4e0tlyr8e7" path="res://Assets/IndustrialWorld/1 Tiles/IndustrialTile_32.png" id="24_1fr6y"]
@@ -981,72 +992,13 @@ size = Vector2(96, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
 size = Vector2(11301.5, 978)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ei405"]
-atlas = ExtResource("16_k73cj")
-region = Rect2(0, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8dv2"]
-atlas = ExtResource("16_k73cj")
-region = Rect2(32, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2nhjh"]
-atlas = ExtResource("16_k73cj")
-region = Rect2(64, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bjha6"]
-atlas = ExtResource("16_k73cj")
-region = Rect2(96, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gt76g"]
-atlas = ExtResource("16_k73cj")
-region = Rect2(128, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1fr6y"]
-atlas = ExtResource("16_k73cj")
-region = Rect2(160, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
-atlas = ExtResource("16_k73cj")
-region = Rect2(192, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebxd8"]
-atlas = ExtResource("16_k73cj")
-region = Rect2(224, 0, 32, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2u7jv"]
-animations = [{
-"frames": [{
-"duration": 4.1,
-"texture": SubResource("AtlasTexture_ei405")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e8dv2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2nhjh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bjha6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gt76g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1fr6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2hxjc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ebxd8")
-}],
-"loop": true,
-"name": &"Hammer",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vxoj"]
+size = Vector2(47.5, 64)
 
 [node name="Node2D" type="Node2D"]
+
 position = Vector2(302, 87)
+
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_a3eoa")
@@ -1148,71 +1100,65 @@ animation = &"Jump2"
 frame_progress = 0.845468
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(356, 483)
-scale = Vector2(5, 5)
-zoom = Vector2(0.7, 0.7)
-limit_left = 330
-limit_right = 2000
+
+position = Vector2(220, 481)
+zoom = Vector2(1.5, 1.5)
+limit_left = 20
+limit_right = 1720
+
+
+
 script = ExtResource("8_rj586")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Re_Spawn" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Re_Spawn"]
 position = Vector2(4617, 1300)
 shape = SubResource("RectangleShape2D_rj586")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 
-[node name="Hammer0" type="AnimatedSprite2D" parent="NavigationObstacle2D"]
-position = Vector2(1054, 410)
+[node name="Hammer0" parent="NavigationObstacle2D" instance=ExtResource("16_fs4d3")]
+position = Vector2(1030, 399)
 rotation = 1.5708
-scale = Vector2(1.02148, 1.02148)
-sprite_frames = SubResource("SpriteFrames_2u7jv")
-animation = &"Hammer"
-frame = 1
-frame_progress = 0.802334
+autoplay = "Hammer"
+frame_progress = 0.103107
+script = ExtResource("17_7vxoj")
+
+[node name="CollisionShape2D" parent="NavigationObstacle2D/Hammer0/Area2D2" index="0"]
+position = Vector2(-0.305241, 52.708)
 
 [node name="Hummer0Cover1" type="Sprite2D" parent="NavigationObstacle2D/Hammer0"]
-position = Vector2(7.8317, -14.6847)
+position = Vector2(18.6004, -38.1801)
 rotation = -1.5708
 scale = Vector2(0.978972, 0.978972)
 texture = ExtResource("22_bjha6")
 
 [node name="Hummer0Cover2" type="Sprite2D" parent="NavigationObstacle2D/Hammer0"]
-position = Vector2(-23.4954, -14.6846)
+position = Vector2(-12.7267, -38.1801)
 rotation = -1.5708
 scale = Vector2(0.978972, 0.978972)
 texture = ExtResource("22_bjha6")
 
-[node name="Hammer1" type="AnimatedSprite2D" parent="NavigationObstacle2D"]
+[node name="Hammer1" parent="NavigationObstacle2D" instance=ExtResource("16_fs4d3")]
 position = Vector2(1187.16, 498.688)
-scale = Vector2(1.02148, 1.02148)
-sprite_frames = SubResource("SpriteFrames_2u7jv")
-animation = &"Hammer"
+autoplay = "Hammer"
 
-[node name="Hammer2" type="AnimatedSprite2D" parent="NavigationObstacle2D"]
-position = Vector2(1224.16, 498.688)
-scale = Vector2(1.02148, 1.02148)
-sprite_frames = SubResource("SpriteFrames_2u7jv")
-animation = &"Hammer"
+[node name="Hammer2" parent="NavigationObstacle2D" instance=ExtResource("16_fs4d3")]
+position = Vector2(1223, 499)
+autoplay = "Hammer"
 
-[node name="Hammer3" type="AnimatedSprite2D" parent="NavigationObstacle2D"]
-position = Vector2(1260.16, 498.688)
-scale = Vector2(1.02148, 1.02148)
-sprite_frames = SubResource("SpriteFrames_2u7jv")
-animation = &"Hammer"
+[node name="Hammer3" parent="NavigationObstacle2D" instance=ExtResource("16_fs4d3")]
+position = Vector2(1260, 499)
+autoplay = "Hammer"
 
-[node name="Hammer4" type="AnimatedSprite2D" parent="NavigationObstacle2D"]
-position = Vector2(1296.16, 498.688)
-scale = Vector2(1.02148, 1.02148)
-sprite_frames = SubResource("SpriteFrames_2u7jv")
-animation = &"Hammer"
+[node name="Hammer4" parent="NavigationObstacle2D" instance=ExtResource("16_fs4d3")]
+position = Vector2(1297, 498)
+autoplay = "Hammer"
 
-[node name="Hammer5" type="AnimatedSprite2D" parent="NavigationObstacle2D"]
-position = Vector2(1332.16, 498.688)
-scale = Vector2(1.02148, 1.02148)
-sprite_frames = SubResource("SpriteFrames_2u7jv")
-animation = &"Hammer"
+[node name="Hammer5" parent="NavigationObstacle2D" instance=ExtResource("16_fs4d3")]
+position = Vector2(1332, 499)
+autoplay = "Hammer"
 
 [node name="Button1" type="Sprite2D" parent="NavigationObstacle2D"]
 position = Vector2(589, 667)
@@ -1248,10 +1194,19 @@ position = Vector2(869, 509)
 scale = Vector2(1.125, 1.30469)
 texture = ExtResource("12_1fr6y")
 
+
+[node name="ActivateHammers" type="Area2D" parent="NavigationObstacle2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationObstacle2D/ActivateHammers"]
+position = Vector2(963.75, 403)
+shape = SubResource("RectangleShape2D_7vxoj")
+
+[connection signal="body_entered" from="Re_Spawn" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+
 [node name="plataforma" parent="." instance=ExtResource("21_7vxoj")]
 position = Vector2(620, 482)
 
 [connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 
-[editable path="CharacterBody2D"]
-[editable path="CharacterBody2D2"]
+
+[editable path="NavigationObstacle2D/Hammer0"]
