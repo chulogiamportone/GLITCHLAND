@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 var motion := Vector2.ZERO
-var gravity := 10
-var jump_strength := -400
+var gravity := 15
+var jump_strength := -500
 var is_attacking := false
 
 @export var player := 0
@@ -38,7 +38,7 @@ func _physics_process(delta):
 	
 	# Movimiento derecha
 	if Input.is_action_pressed(input_right):
-		motion.x = 50
+		motion.x = 500
 		animated_sprite.flip_h = false
 		empuje.disabled = true
 		empuje.position.x = abs(empuje.position.x)
@@ -47,7 +47,7 @@ func _physics_process(delta):
 
 	# Movimiento izquierda
 	elif Input.is_action_pressed(input_left):
-		motion.x = -50
+		motion.x = -500
 		animated_sprite.flip_h = true
 		empuje.disabled = true
 		empuje.position.x = -abs(empuje.position.x)
