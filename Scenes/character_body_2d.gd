@@ -38,7 +38,7 @@ func _physics_process(delta):
 	
 	# Movimiento derecha
 	if Input.is_action_pressed(input_right):
-		motion.x = 50
+		motion.x = 300
 		animated_sprite.flip_h = false
 		empuje.disabled = true
 		empuje.position.x = abs(empuje.position.x)
@@ -47,7 +47,7 @@ func _physics_process(delta):
 
 	# Movimiento izquierda
 	elif Input.is_action_pressed(input_left):
-		motion.x = -50
+		motion.x = -300
 		animated_sprite.flip_h = true
 		empuje.disabled = true
 		empuje.position.x = -abs(empuje.position.x)
@@ -113,9 +113,10 @@ func _on_animated_sprite_2d_animation_finished_2() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.player==1:
-		body.position.x= $"../CharacterBody2D2".position.x-50
-		body.position.y= 100
-	else:
-		body.position.x= $"../CharacterBody2D".position.x-50
-		body.position.y= 100
+	if body.name=="CharacterBody2D" or body.name=="CharacterBody2D2":
+		if body.player == 1:
+			body.position.x = $"../CharacterBody2D2".position.x - 50
+			body.position.y = $"../CharacterBody2D2".position.y
+		else:
+			body.position.x = $"../CharacterBody2D".position.x - 50
+			body.position.y = $"../CharacterBody2D".position.y
