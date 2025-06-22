@@ -997,8 +997,7 @@ frame_progress = 0.845468
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(220, 481)
-scale = Vector2(5, 5)
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(1.5, 1.5)
 limit_left = 20
 limit_right = 1720
 script = ExtResource("8_rj586")
@@ -1095,6 +1094,4 @@ shape = SubResource("RectangleShape2D_7vxoj")
 
 [connection signal="body_entered" from="Re_Spawn" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 
-[editable path="CharacterBody2D"]
-[editable path="CharacterBody2D2"]
 [editable path="NavigationObstacle2D/Hammer0"]

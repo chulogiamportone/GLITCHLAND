@@ -97,8 +97,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name=="Cuerpo" :
 		if !empuje.disabled:
 			area.get_parent().animated_sprite.play("Hurt")
-			area.get_parent().global_position.x==area.get_parent().global_position.x-50
-
+			area.get_parent().global_position.x=area.get_parent().global_position.x-50
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "Attack":
@@ -108,14 +107,14 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_animated_sprite_2d_animation_finished_2() -> void:
 	
 	if animated_sprite.animation == "Attack":
-		print("caca")
 		is_attacking = false
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.player==1:
-		body.position.x= $"../CharacterBody2D2".position.x-50
-		body.position.y= 100
-	else:
-		body.position.x= $"../CharacterBody2D".position.x-50
-		body.position.y= 100
+	if body.name=="CharacterBody2D" or body.name=="CharacterBody2D2":
+		if body.player==1:
+			body.position.x= $"../CharacterBody2D2".position.x-50
+			body.position.y= 100
+		else:
+			body.position.x= $"../CharacterBody2D".position.x-50
+			body.position.y= 100
