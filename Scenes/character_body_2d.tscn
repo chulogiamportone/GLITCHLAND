@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://buh1y1l1ivl0f"]
+[gd_scene load_steps=6 format=3 uid="uid://y6p22ms0mtp8"]
 
 [ext_resource type="Script" uid="uid://bijwjce5jtucs" path="res://Scenes/character_body_2d.gd" id="1_88kja"]
 [ext_resource type="SpriteFrames" uid="uid://t1ds30rd0vru" path="res://ART/SpriteFrames/Rosa.tres" id="2_it8n0"]
