@@ -11,3 +11,7 @@ func _on_button_pressed() -> void:
 
 func _on_button_pressed2() -> void:
 	scene_tree.change_scene_to_file("res://node_2d.tscn")
+
+
+func _on_button_3_pressed() -> void:
+	scene_tree.quit()
