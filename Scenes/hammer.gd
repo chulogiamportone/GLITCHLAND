@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@onready var hammer_animation: AnimatedSprite2D = $"../Hammer1"
+@onready var hammer_animation: AnimatedSprite2D = self
 
 var trap_hurt:=false
 var is_body_inside:=false

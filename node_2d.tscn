@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://legtahpkt2gw"]
+[gd_scene load_steps=39 format=4 uid="uid://legtahpkt2gw"]
 
 [ext_resource type="Texture2D" uid="uid://bceh0amsihpee" path="res://ART/pixil-frame-0 (3).png" id="1_d3si5"]
 [ext_resource type="Texture2D" uid="uid://cd3p62yo3ggga" path="res://ART/pixil-frame-0 (9).png" id="2_ygq5x"]
@@ -17,11 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://y6p22ms0mtp8" path="res://Scenes/character_body_2d.tscn" id="12_fs4d3"]
 [ext_resource type="PackedScene" uid="uid://dw708xita6yo1" path="res://Scenes/character_body_2d_2.tscn" id="13_7vxoj"]
 [ext_resource type="PackedScene" uid="uid://ps7ywfk1l27j" path="res://Scenes/hammer.tscn" id="16_fs4d3"]
-[ext_resource type="Script" path="res://Scenes/hammer0.gd" id="17_7vxoj"]
+[ext_resource type="Script" uid="uid://xym4q8rx2vuv" path="res://Scenes/hammer0.gd" id="17_7vxoj"]
 [ext_resource type="PackedScene" uid="uid://b6fpihqldain7" path="res://Scenes/plataforma.tscn" id="21_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://b5wb482hfepyq" path="res://Assets/IndustrialWorld/1 Tiles/IndustrialTile_36.png" id="22_bjha6"]
+[ext_resource type="Script" uid="uid://pgfi0cbbk3q" path="res://joistick.gd" id="23_2nhjh"]
 [ext_resource type="Texture2D" uid="uid://c6aim7yob0ckx" path="res://Assets/IndustrialWorld/3 Objects/Barrel2.png" id="23_gt76g"]
 [ext_resource type="Texture2D" uid="uid://bvp4e0tlyr8e7" path="res://Assets/IndustrialWorld/1 Tiles/IndustrialTile_32.png" id="24_1fr6y"]
+[ext_resource type="Texture2D" uid="uid://7lstmiqv1l78" path="res://ART/azulito.png" id="24_bjha6"]
+[ext_resource type="Texture2D" uid="uid://cttybyffmf0pm" path="res://ART/Glass_plate_003.jpg" id="24_gt76g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57ypx"]
 texture = ExtResource("1_d3si5")
@@ -1148,6 +1151,38 @@ scale = Vector2(1.125, 1.30469)
 texture = ExtResource("12_1fr6y")
 
 [node name="plataforma" parent="." instance=ExtResource("21_7vxoj")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 61.0
+offset_top = 622.0
+offset_right = 101.0
+offset_bottom = 662.0
+script = ExtResource("23_2nhjh")
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -63.0
+offset_right = 106.0
+offset_bottom = 65.0
+texture = ExtResource("24_gt76g")
+expand_mode = 1
+
+[node name="Knob" type="TextureRect" parent="Control/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 45.0
+offset_right = -45.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_bjha6")
+expand_mode = 1
 
 [connection signal="body_entered" from="Re_Spawn" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 
