@@ -11,6 +11,9 @@ var is_attacking := false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var empuje: CollisionShape2D = $Area2D/Empuje
 
+
+# Player.gd (fragmento)
+@onready var joystick: Node = $"../Control"  # ruta a tu joystick
 # Define controles por jugador
 var input_right := ""
 var input_left := ""
@@ -29,7 +32,22 @@ func _ready():
 		input_jump = "j_jump"
 		input_attack = "j_attack"
 
-	
+
+
+func joistick_mov():
+	var move_vec = Vector2.ZERO
+
+	if joystick and joystick.visible:
+		move_vec = joystick.get_vector()
+	else:
+		# Entrada por teclado/ratón (ejemplo con acciones ui_* configuradas en InputMap)
+		var x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		var y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		move_vec = Vector2(x, y)
+		if move_vec.length() > 0:
+			move_vec = move_vec.normalized()
+
+	# aplicar movimiento al cuerpo, e.g. velocity = move_vec * speed
 	
 
 func _physics_process(delta):
@@ -79,6 +97,7 @@ func _physics_process(delta):
 	if not is_action and not is_attacking:
 		_play_animation("Idle")
 		empuje.disabled = true
+	joistick_mov()
 
 	velocity = motion
 	move_and_slide()

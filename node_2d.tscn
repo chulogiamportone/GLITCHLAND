@@ -23,8 +23,8 @@
 [ext_resource type="Script" uid="uid://pgfi0cbbk3q" path="res://joistick.gd" id="23_2nhjh"]
 [ext_resource type="Texture2D" uid="uid://c6aim7yob0ckx" path="res://Assets/IndustrialWorld/3 Objects/Barrel2.png" id="23_gt76g"]
 [ext_resource type="Texture2D" uid="uid://bvp4e0tlyr8e7" path="res://Assets/IndustrialWorld/1 Tiles/IndustrialTile_32.png" id="24_1fr6y"]
-[ext_resource type="Texture2D" uid="uid://7lstmiqv1l78" path="res://ART/azulito.png" id="24_bjha6"]
 [ext_resource type="Texture2D" uid="uid://cttybyffmf0pm" path="res://ART/Glass_plate_003.jpg" id="24_gt76g"]
+[ext_resource type="Texture2D" uid="uid://c5mno4w5e86r8" path="res://ART/cuerpo azul.png" id="25_bjha6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57ypx"]
 texture = ExtResource("1_d3si5")
@@ -1155,33 +1155,36 @@ texture = ExtResource("12_1fr6y")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 61.0
-offset_top = 622.0
-offset_right = 101.0
-offset_bottom = 662.0
+offset_left = 65.0
+offset_top = 607.0
+offset_right = 118.32204
+offset_bottom = 659.0
 script = ExtResource("23_2nhjh")
 
 [node name="Background" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_left = -22.0
-offset_top = -63.0
-offset_right = 106.0
-offset_bottom = 65.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("24_gt76g")
 expand_mode = 1
 
 [node name="Knob" type="TextureRect" parent="Control/Background"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 42.0
-offset_top = 45.0
-offset_right = -45.0
-offset_bottom = -43.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.669491
+offset_top = -11.669491
+offset_right = 11.669491
+offset_bottom = 11.669491
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("24_bjha6")
+texture = ExtResource("25_bjha6")
 expand_mode = 1
 
 [connection signal="body_entered" from="Re_Spawn" to="CharacterBody2D" method="_on_area_2d_body_entered"]

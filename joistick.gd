@@ -13,12 +13,12 @@ var stick_dir: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	# Mostrar/ocultar según plataforma/táctil
 	if auto_hide_on_non_touch:
-		var is_touch = OS.get_name() in ["Android", "iOS"]
+		#var is_touch = OS.get_name() in ["Android", "iOS"]
+		var is_touch = true
 		visible = is_touch
 		set_process(is_touch)
 
-	# Centrar knob
-	knob.position = bg.size * 0.5
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
