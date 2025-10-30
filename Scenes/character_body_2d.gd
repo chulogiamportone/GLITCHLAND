@@ -28,8 +28,11 @@ var input_jump := ""
 var input_attack := ""
 
 var life:int=0;
+@onready var sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-
+func play_sound(path: String):
+	sfx.stream = load(path)
+	sfx.play()
 
 func _ready() -> void:
 	# Asignar joystick por jugador
@@ -168,6 +171,7 @@ func _on_animated_sprite_2d_animation_finished(body: Node2D) -> void:
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name=="CharacterBody2D" or body.name=="CharacterBody2D2":
+		play_sound("res://Audio/822690__riippumattog__i-love-you-puppet-style.wav")
 		body.life+=1
 		body.position.x= 950
 		body.position.y= 418

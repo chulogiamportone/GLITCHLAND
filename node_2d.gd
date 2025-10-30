@@ -25,6 +25,12 @@ var scene_tree := Engine.get_main_loop() as SceneTree
 @onready var timer: Timer = $Timer
 var creditos=0
 var counter=0
+@onready var sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+func play_sound(path: String):
+	sfx.stream = load(path)
+	sfx.play()
+
 
 func _ready() -> void:
 	boss_init.connect(close_boss)
@@ -74,6 +80,8 @@ func _on_timer_timeout() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	
+	play_sound("res://Audio/822690__riippumattog__i-love-you-puppet-style.wav")
 	if body.name=="CharacterBody2D" or body.name=="CharacterBody2D2":
 		creditos+=1
 		print("pasa"+body.name)

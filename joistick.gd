@@ -23,8 +23,8 @@ var pointer_idx: int = -1
 var dir: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	#if auto_hide_on_non_touch:
-		#visible = DisplayServer.is_touchscreen_available()
+	if auto_hide_on_non_touch:
+		visible = DisplayServer.is_touchscreen_available()
 	knob.position = bg.size * 0.5-(knob.size/2)
 	set_process_input(true)
 
