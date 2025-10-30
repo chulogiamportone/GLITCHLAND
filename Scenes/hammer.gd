@@ -1,10 +1,12 @@
 extends AnimatedSprite2D
 
 @onready var hammer_animation: AnimatedSprite2D = self
+@onready var timer: Timer = $Timer
 
 var trap_hurt:=false
 var is_body_inside:=false
 var body_inside
+var death=false
 
 func _physics_process(delta: float) -> void:
 	if frame==1 or frame==2 or frame==3 or frame==4:
@@ -12,14 +14,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		trap_hurt=false
 	if trap_hurt and is_body_inside:
-			body_inside.animated_sprite.play("Hurt")
-			if body_inside.player==1:
-				body_inside.position.x= $"../../CharacterBody2D2".position.x-20
-				body_inside.position.y= $"../../CharacterBody2D2".position.y-20
-			else:
-				body_inside.position.x= $"../../CharacterBody2D".position.x-20
-				body_inside.position.y= $"../../CharacterBody2D".position.y-20
-
+		body_inside.animated_sprite.play("Death")
+		body_inside.position.x= 1142.0
+		body_inside.position.y= 514.0
+		if !death:
+			body_inside.life+=1
+			death=true
+			timer.start()
+		return
+			
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body.name=="CharacterBody2D" or body.name=="CharacterBody2D2":
 		is_body_inside=true
@@ -28,3 +31,7 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_2_body_exited(body: Node2D) -> void:
 	is_body_inside=false
+
+
+func _on_timer_timeout() -> void:
+	death=false

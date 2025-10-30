@@ -65,35 +65,6 @@ animations = [{
 "loop": true,
 "name": &"Hammer",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 6.0,
-"texture": SubResource("AtlasTexture_ei405")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e8dv2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2nhjh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bjha6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gt76g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1fr6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2hxjc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ebxd8")
-}],
-"loop": false,
-"name": &"Hammer_1",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fs4d3"]
@@ -102,7 +73,7 @@ size = Vector2(39.9376, 31.3272)
 [node name="Hammer" type="AnimatedSprite2D"]
 scale = Vector2(1.02148, 1.02148)
 sprite_frames = SubResource("SpriteFrames_2u7jv")
-animation = &"Hammer_1"
+animation = &"Hammer"
 autoplay = "Hammer"
 script = ExtResource("2_l8gpf")
 
@@ -114,9 +85,5 @@ rotation = 1.5708
 position = Vector2(0.000244141, 52.8645)
 shape = SubResource("RectangleShape2D_fs4d3")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
-
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

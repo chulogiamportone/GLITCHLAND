@@ -9,9 +9,23 @@ func _on_button_pressed() -> void:
 	v_box_container_2.visible=true
 	
 
-func _on_button_pressed2() -> void:
-	scene_tree.change_scene_to_file("res://node_2d.tscn")
 
 
 func _on_button_3_pressed() -> void:
 	scene_tree.quit()
+
+
+func _on_1p_pressed() -> void:
+	Global.cantidad_players=1
+	scene_tree.change_scene_to_file("res://node_2d.tscn")
+	
+
+
+func _on_2p_pressed() -> void:
+	Global.cantidad_players=2
+	scene_tree.change_scene_to_file("res://node_2d.tscn")
+
+
+func _on_3p_pressed() -> void:
+	Global.cantidad_players=3
+	scene_tree.change_scene_to_file("res://node_2d.tscn")
