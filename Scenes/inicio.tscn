@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c81n2mdaslu07"]
+[gd_scene load_steps=7 format=3 uid="uid://c81n2mdaslu07"]
 
 [ext_resource type="Texture2D" uid="uid://1qb0ff2m8o3j" path="res://Assets/IndustrialWorld/2 Background/InicFondo.png" id="1_47xpm"]
 [ext_resource type="Script" uid="uid://b3asaksily3oy" path="res://Scenes/inicio.gd" id="1_dcnhq"]
 [ext_resource type="FontFile" uid="uid://drs5jmnxnnju0" path="res://Assets/Font/8-bit Arcade In.ttf" id="2_dcnhq"]
 [ext_resource type="Texture2D" uid="uid://cm1vo8vajmrey" path="res://Assets/IndustrialWorld/logo.png" id="3_kv7mu"]
+[ext_resource type="Shader" uid="uid://bju5sf2m2g1ne" path="res://daltonismo.gdshader" id="5_kv7mu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qtyot"]
+shader = ExtResource("5_kv7mu")
+shader_parameter/daltonism_type = 0
+shader_parameter/strength = 1.0
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -129,6 +135,73 @@ disabled = true
 text = "3 players"
 flat = true
 
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -135.0
+offset_right = 70.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_dcnhq")
+theme_override_font_sizes/font_size = 25
+text = "COLORS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Comun" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.870588, 1, 0.105882, 1)
+theme_override_fonts/font = ExtResource("2_dcnhq")
+theme_override_font_sizes/font_size = 22
+text = "normal"
+flat = true
+
+[node name="T1" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.870588, 1, 0.105882, 1)
+theme_override_fonts/font = ExtResource("2_dcnhq")
+theme_override_font_sizes/font_size = 22
+text = "protanopia"
+flat = true
+
+[node name="T2" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.870588, 1, 0.105882, 1)
+theme_override_colors/font_pressed_color = Color(0.384314, 0.121569, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_dcnhq")
+theme_override_font_sizes/font_size = 22
+text = "deuteranopia"
+flat = true
+
+[node name="T3" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.870588, 1, 0.105882, 1)
+theme_override_colors/font_pressed_color = Color(0.384314, 0.121569, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_dcnhq")
+theme_override_font_sizes/font_size = 22
+text = "tritanopia"
+flat = true
+
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -141,8 +214,23 @@ grow_horizontal = 2
 texture = ExtResource("3_kv7mu")
 expand_mode = 1
 
+[node name="Daltonism" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_qtyot")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="VBoxContainer2/1P" to="." method="_on_1p_pressed"]
 [connection signal="pressed" from="VBoxContainer2/2P" to="." method="_on_2p_pressed"]
 [connection signal="pressed" from="VBoxContainer2/3P" to="." method="_on_3p_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Comun" to="." method="_on_comun_pressed"]
+[connection signal="pressed" from="VBoxContainer3/T1" to="." method="_on_t_1_pressed"]
+[connection signal="pressed" from="VBoxContainer3/T2" to="." method="_on_t_2_pressed"]
+[connection signal="pressed" from="VBoxContainer3/T3" to="." method="_on_t_3_pressed"]

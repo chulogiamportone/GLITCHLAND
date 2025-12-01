@@ -14,6 +14,7 @@ size = Vector2(31, 22.5)
 size = Vector2(43, 42)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
 safe_margin = 0.001
 script = ExtResource("1_88kja")
 player = 1

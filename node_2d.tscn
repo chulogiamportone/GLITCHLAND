@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://legtahpkt2gw"]
+[gd_scene load_steps=66 format=4 uid="uid://legtahpkt2gw"]
 
 [ext_resource type="Texture2D" uid="uid://bceh0amsihpee" path="res://ART/pixil-frame-0 (3).png" id="1_d3si5"]
 [ext_resource type="Script" uid="uid://d3fubltngfybn" path="res://node_2d.gd" id="1_gt76g"]
@@ -27,12 +27,14 @@
 [ext_resource type="Texture2D" uid="uid://b5wb482hfepyq" path="res://Assets/IndustrialWorld/1 Tiles/IndustrialTile_36.png" id="22_bjha6"]
 [ext_resource type="Texture2D" uid="uid://bav2ep7oyqe3y" path="res://Assets/2 Owlet_Monster/Owlet_Monster.png" id="22_mryly"]
 [ext_resource type="Script" uid="uid://pgfi0cbbk3q" path="res://joistick.gd" id="23_2nhjh"]
+[ext_resource type="Texture2D" uid="uid://bormoe847y60o" path="res://ART/cartel.png" id="23_cnnru"]
 [ext_resource type="Texture2D" uid="uid://c6aim7yob0ckx" path="res://Assets/IndustrialWorld/3 Objects/Barrel2.png" id="23_gt76g"]
 [ext_resource type="Texture2D" uid="uid://bvp4e0tlyr8e7" path="res://Assets/IndustrialWorld/1 Tiles/IndustrialTile_32.png" id="24_1fr6y"]
 [ext_resource type="Script" uid="uid://dc1hwqvni7wau" path="res://Scenes/hammerBig.gd" id="26_24dk6"]
 [ext_resource type="Texture2D" uid="uid://d1mwvqpkomirt" path="res://Assets/3 Objects/Fence/4_1.png" id="27_1fr6y"]
 [ext_resource type="Texture2D" uid="uid://3jby6too7jy0" path="res://creditos.png" id="32_kq1c5"]
 [ext_resource type="Texture2D" uid="uid://cm1vo8vajmrey" path="res://Assets/IndustrialWorld/logo.png" id="33_ornx7"]
+[ext_resource type="Shader" uid="uid://bju5sf2m2g1ne" path="res://daltonismo.gdshader" id="34_ornx7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57ypx"]
 texture = ExtResource("1_d3si5")
@@ -1005,6 +1007,43 @@ border_color = Color(0.8, 0.8, 0, 1)
 corner_radius_top_left = 10
 corner_radius_bottom_right = 10
 
+[sub_resource type="Animation" id="Animation_540hr"]
+resource_name = "Cartel"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cartel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(7, -260), Vector2(7, -173), Vector2(7, -173), Vector2(7, -260)]
+}
+
+[sub_resource type="Animation" id="Animation_6ip5v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cartel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, -260)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q5dlx"]
+_data = {
+&"Cartel": SubResource("Animation_540hr"),
+&"RESET": SubResource("Animation_6ip5v")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
 size = Vector2(262.375, 426.5)
 
@@ -1199,6 +1238,17 @@ _data = {
 &"new_animation": SubResource("Animation_kq1c5")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cnnru"]
+shader = ExtResource("34_ornx7")
+shader_parameter/daltonism_type = 0
+shader_parameter/strength = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4wnb"]
+size = Vector2(38.5, 242.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnnru"]
+size = Vector2(24, 242)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gt76g")
 
@@ -1318,7 +1368,7 @@ frame_progress = 0.845468
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 6
-position = Vector2(420, 478)
+position = Vector2(1772, 478)
 zoom = Vector2(1.5, 1.5)
 limit_left = 20
 limit_right = 2951
@@ -1443,6 +1493,43 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("21_24dk6")
 theme_override_font_sizes/font_size = 18
 text = "0"
+
+[node name="Mando" type="Label" parent="Camera2D"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -359.0
+offset_top = 150.0
+offset_right = 49.0
+offset_bottom = 188.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.87058824, 1, 0.105882354, 1)
+theme_override_fonts/font = ExtResource("21_24dk6")
+text = "MANDO CONECTADO"
+vertical_alignment = 1
+
+[node name="Cartel" type="Sprite2D" parent="Camera2D"]
+position = Vector2(7, -260)
+scale = Vector2(0.16796875, 0.16796875)
+texture = ExtResource("23_cnnru")
+
+[node name="LabelCartel" type="Label" parent="Camera2D/Cartel"]
+offset_left = -327.4419
+offset_top = -59.534904
+offset_right = 333.396
+offset_bottom = 190.5116
+theme_override_fonts/font = ExtResource("21_24dk6")
+theme_override_font_sizes/font_size = 50
+text = "salta sobre la plataforma"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_q5dlx")
+}
 
 [node name="Re_Spawn" type="Area2D" parent="."]
 
@@ -1654,10 +1741,36 @@ expand_mode = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
+[node name="Daltonism" type="ColorRect" parent="."]
+z_index = 200
+material = SubResource("ShaderMaterial_cnnru")
+offset_right = 3837.0
+offset_bottom = 2377.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="CartelCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CartelCollision"]
+position = Vector2(552.75, 408.25)
+shape = SubResource("RectangleShape2D_c4wnb")
+
+[node name="CartelCollision2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CartelCollision2"]
+position = Vector2(818, 412)
+shape = SubResource("RectangleShape2D_cnnru")
+
 [connection signal="body_entered" from="Re_Spawn" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="NavigationObstacle2D/Hammer/Area2D2" to="." method="_on_hammer_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="CartelCollision" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="CartelCollision2" to="." method="_on_cartel_collision_2_body_entered"]
 
 [editable path="CharacterBody2D"]
 [editable path="CharacterBody2D2"]
+[editable path="NavigationObstacle2D/Hammer"]
